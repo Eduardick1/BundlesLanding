@@ -1,0 +1,180 @@
+@import "variables";
+
+@keyframes bundleApperance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero {
+  color: $fontColor;
+  max-width: 969px;
+  margin: 0 auto;
+
+  padding-bottom: 100px; //MOCK
+  h1 {
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+    @media (max-width: 325px) {
+      font-size: calc((1vw + 1vh) * 3);
+    }
+  }
+  .bundles {
+    margin-top: 70px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    @media (max-width: 920px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__tariff {
+      $xPadding: 60px;
+      @media (max-width: 250px) {
+        $xPadding: 5vw;
+      }
+
+      box-sizing: content-box;
+      padding: 38px $xPadding 28px $xPadding;
+      width: 214px;
+      min-height: 500px;
+      font-size: $fontSizeText;
+      border-radius: 12px;
+      background-color: $cardColor;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: bundleApperance 1000ms forwards;
+      &:first-child {
+        animation-delay: 1000ms;
+      }
+      &:last-child {
+        animation-delay: 2000ms;
+      }
+      &:nth-child(2) {
+        animation-delay: 1500ms;
+        background-color: $cardColorDark;
+        @media (min-width: 920px) {
+          position: absolute;
+          top: -38px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 20;
+        }
+        .bundles__tariff-subtitle::after {
+          display: none;
+        }
+        .bundles__tariff-btnmain {
+          background-color: $activeColor;
+          border-color: $activeColorLight;
+          color: inherit;
+          &:hover .btnmain-icon {
+            transform: translateX(8px);
+          }
+          .btnmain-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: $fontColorAlpha;
+            transition: transform 150ms ease;
+            svg {
+              stroke: $activeColor;
+            }
+          }
+
+          &:hover {
+            background-color: darken($activeColor, 10%);
+          }
+        }
+      }
+
+      &-title {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      &_price {
+        display: flex;
+        align-items: baseline;
+        padding: 15px 0;
+        &-symbol {
+          font-weight: 500;
+          align-self: self-start;
+          cursor: pointer;
+        }
+        &-number {
+          font-weight: 800;
+          font-size: 38px;
+        }
+        &-period {
+          color: $fontColorAlpha;
+          cursor: pointer;
+        }
+      }
+      &-subtitle {
+        color: $fontColorAlpha;
+        padding: 15px 0 25px 0;
+        border-top: 1px solid rgba($color: #fff, $alpha: 0.1);
+        position: relative;
+        &::after {
+          position: absolute;
+          top: 100%;
+          left: -$xPadding;
+          content: "";
+          height: 1px;
+          width: calc(100% + 2 * $xPadding);
+          background-color: rgba($color: #fff, $alpha: 0.1);
+        }
+      }
+      &__features {
+        // display: flex;
+        // flex-direction: column;
+        &-title {
+          font-size: 15px;
+          font-weight: 600;
+          padding: 25px 0 10px 0;
+        }
+        &-subtitle {
+          font-size: 13px;
+          font-weight: 500;
+        }
+        &_list {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          list-style: url("../assets/bundleListArrow.svg");
+          padding-left: 1rem;
+          margin-top: 24px;
+          li.notExclusive {
+            color: $fontColorAlpha;
+          }
+        }
+      }
+      &-btnmain {
+        width: 100%;
+        border-radius: 7px;
+        border: 1px solid #d0d0d0;
+        padding: 12px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: transparent;
+        transition: background-color 200ms ease;
+        margin-top: auto;
+        &:hover,
+        &:active {
+          background-color: #fff;
+          color: $cardColor;
+        }
+      }
+    }
+  }
+}

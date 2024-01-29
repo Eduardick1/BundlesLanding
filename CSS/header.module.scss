@@ -1,0 +1,134 @@
+@import "variables";
+
+@keyframes modalMenu {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: $fontSizeText;
+  color: $fontColorAlpha;
+  padding: 35px 0;
+  a {
+    flex-shrink: 0;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    &-name {
+      text-decoration: line-through;
+      font-weight: 700;
+      color: $fontColor;
+    }
+  }
+
+  &_menu {
+    fill: $fontColorAlpha;
+    cursor: pointer;
+    @media (min-width: 768px) {
+      display: none;
+    }
+    &:hover {
+      fill: $fontColor;
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 87px; // mb will change to parent gap
+    &_mobile-close {
+      display: none;
+    }
+    &__pages {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      &-item:hover {
+        font-weight: 500;
+        color: $fontColor;
+      }
+      &-item:nth-child(3) {
+        color: $fontColor;
+        font-weight: 500; // MOCK
+      }
+    }
+    &_auth {
+      display: flex;
+      align-items: center;
+      gap: 14;
+      margin-left: auto;
+      button {
+        border-radius: 7px;
+        padding: 8px 14px;
+        text-align: center;
+        width: 114px;
+        height: 39px;
+        transition: all 150ms ease;
+        &:hover {
+          color: $fontColor;
+          font-weight: 500;
+        }
+      }
+      #signUp {
+        background-color: $activeColor;
+        border: 1px solid $activeColorLight;
+        font-weight: 500;
+        color: $fontColor;
+        &:hover {
+          background-color: darken($activeColor, 10%);
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      display: none;
+      background: lighten($cardColorDark, 10%);
+      height: 100dvh;
+      width: fit-content;
+      padding: 1rem;
+      flex-direction: column-reverse;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: flex-end;
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 100;
+      &_mobile-close {
+        display: grid;
+        place-content: center center;
+        position: absolute;
+        top: 1rem;
+        right: 105%;
+        background-color: lighten($cardColorDark, 10%);
+        border-radius: 50%;
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+      &__pages {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      &_auth {
+        #login {
+          display: none;
+        }
+      }
+    }
+  }
+  .open {
+    display: flex;
+    animation: modalMenu 500ms forwards;
+  }
+}
