@@ -1,6 +1,7 @@
 # Pricing Bundles
 
 Adaptive landing page with pricing bundles
+Available toggle price per day/month and per dollar/ruble
 
 ---
 
@@ -19,3 +20,8 @@ Adaptive landing page with pricing bundles
 ![MainScreenDesktop](https://github.com/Eduardick1/BundlesLanding/blob/main/PREVIEW/FullPageDesktop.png)
 ![MainScreenMobile](https://github.com/Eduardick1/BundlesLanding/blob/main/PREVIEW/FullPageMobile.png)
 ![ModalMenu](https://github.com/Eduardick1/BundlesLanding/blob/main/PREVIEW/ModalMenu.png)
+![Price](https://github.com/Eduardick1/BundlesLanding/blob/main/PREVIEW/1.png)
+![Price](https://github.com/Eduardick1/BundlesLanding/blob/main/PREVIEW/2.png)
+![Price](https://github.com/Eduardick1/BundlesLanding/blob/main/PREVIEW/3.png)
+![Price](https://github.com/Eduardick1/BundlesLanding/blob/main/PREVIEW/4.png)
+
