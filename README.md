@@ -1,6 +1,7 @@
 # Pricing Bundles
 
-Adaptive landing page with pricing bundles
+Adaptive landing page with pricing bundles.
+
 Available toggle price per day/month and per dollar/ruble
 
 ---
