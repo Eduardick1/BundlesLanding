@@ -323,7 +323,7 @@ body {
   background: linear-gradient(345deg, rgb(32, 44, 46) 0%, rgb(52, 93, 60) 100%);
 }
 body::before, body::after {
-  content: url("../assets/bgVector.svg");
+  content: url("assets/bgVector.svg");
   position: absolute;
   top: 2%;
   z-index: -1;
