@@ -36,9 +36,7 @@
 
     &__tariff {
       $xPadding: 60px;
-      @media (max-width: 250px) {
-        $xPadding: 5vw;
-      }
+     
 
       box-sizing: content-box;
       padding: 38px $xPadding 28px $xPadding;
